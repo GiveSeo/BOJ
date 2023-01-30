@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int dp[1000001];
+    int num;
+    cin>>num;
+    dp[1]=1;
+    dp[2]=1;
+    dp[3]=2;
+    dp[4]=1;
+    for(int i=1;i*i<=num;i++){
+        dp[i*i]=2;
+    }
+    for(int i=1;i<=num;i++){
+        dp[i]=min(i,dp[i]);
+        for(int k=1;(k*k)<i;k++){
+            dp[i]=min(dp[i],dp[i-k*k]+1);
+        }
+    }
+    cout<<dp[num];
+            
+}
