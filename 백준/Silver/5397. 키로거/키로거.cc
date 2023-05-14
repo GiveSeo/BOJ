@@ -25,7 +25,7 @@ int main(){
             else if(c == '-'){
                 if(p!=l.begin()){
                     p--;
-                    p=l.erase(p);
+                    p=l.erase(p);//erase는 삭제 후 그 다음 원소를 가리킴
                 }
             }
             else if(c == '\n'){}
